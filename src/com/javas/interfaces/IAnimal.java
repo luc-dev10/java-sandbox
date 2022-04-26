@@ -6,7 +6,7 @@ public interface IAnimal {
     int VALUE = 10;
 
     /*  default methods can be defined in interfaces
-     *  introduced to avoid boilerplate for lambda expressions
+     *  introduced to leverage lambda expressions
      * */
     default int getLungs() {
         return getValue();

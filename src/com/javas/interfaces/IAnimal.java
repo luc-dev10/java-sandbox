@@ -16,4 +16,5 @@ public interface IAnimal {
     private int getValue() {
         return IAnimal.VALUE;
     }
+
 }

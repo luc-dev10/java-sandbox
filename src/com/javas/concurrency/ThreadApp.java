@@ -28,12 +28,13 @@ public class ThreadApp {
         Thread runnableThread = new Thread(new FirstRunnable());
         runnableThread.start();
 
-        //        new Runnable() {
-        //            @Override
-        //            public void run() {
-        //                System.out.println("Anonymous Runnable Thread");
-        //            }
-        //        }
+        // anonymous thread and runnable
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("Anonymous Runnable Thread");
+            }
+        }).start();
 
         // ________________________________
 

@@ -16,11 +16,11 @@ public class ThreadApp {
         firstThread.start();
 
         // creating anonymous class
-        new Thread() {
-            public void run() {
-                System.out.println("Anonymous Thread...");
-            }
-        }.start();
+        //        new Thread() {
+        //            public void run() {
+        //                System.out.println("Anonymous Thread...");
+        //            }
+        //        }.start();
 
         // ________________________________
 
@@ -29,14 +29,17 @@ public class ThreadApp {
         runnableThread.start();
 
         // anonymous thread and runnable
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Anonymous Runnable Thread");
-            }
-        }).start();
+        //        new Thread(new Runnable() {
+        //            @Override
+        //            public void run() {
+        //                System.out.println("Anonymous Runnable Thread");
+        //            }
+        //        }).start();
 
         // ________________________________
+
+        // thread interruption
+        firstThread.interrupt();
 
         System.out.println("Main Thread ending.....");
     }

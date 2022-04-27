@@ -9,6 +9,8 @@ public class ThreadApp {
 
         System.out.println("Main Thread.....");
 
+        // creating threads with the Thread Class
+
         // next thread
         FirstThread firstThread = new FirstThread();
         firstThread.start();
@@ -20,7 +22,21 @@ public class ThreadApp {
             }
         }.start();
 
-        System.out.println("Main Thread ending.....");
+        // ________________________________
 
+        // creating threads with the Runnable Interface
+        Thread runnableThread = new Thread(new FirstRunnable());
+        runnableThread.start();
+
+        //        new Runnable() {
+        //            @Override
+        //            public void run() {
+        //                System.out.println("Anonymous Runnable Thread");
+        //            }
+        //        }
+
+        // ________________________________
+
+        System.out.println("Main Thread ending.....");
     }
 }

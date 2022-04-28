@@ -1,4 +1,4 @@
-package com.javas.abstracts;
+package com.sandbox.abstracts;
 
 public class Animal extends AbstractAnimal {
     @Override

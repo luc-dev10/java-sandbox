@@ -1,4 +1,4 @@
-package com.javas.interfaces;
+package com.sandbox.interfaces;
 
 public class Main {
     public static void main(String[] args) {

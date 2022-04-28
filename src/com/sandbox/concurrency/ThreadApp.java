@@ -1,4 +1,4 @@
-package com.javas.concurrency;
+package com.sandbox.concurrency;
 
 public class ThreadApp {
 

@@ -43,14 +43,13 @@ public class MainApp {
                                                                       .compareTo(secondVehicle.getMake()));
         // display
         printVehicle(motorcycles);
-        
+
         // ______________________________
 
     }
 
     public static void printVehicle(ArrayList<Vehicle> vehicles) {
         vehicles.forEach(vehicle -> System.out.printf("Make: %s, Model: %s Year: %d\n", vehicle.getMake(), vehicle.getModel(), vehicle.getReleaseYear()));
-
     }
 
 }

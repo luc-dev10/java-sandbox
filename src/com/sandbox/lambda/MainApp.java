@@ -37,8 +37,8 @@ public class MainApp {
         // ______________________________
 
         // using lambda expression as parameter
-        animalArrayList.sort((Animal firstAnimal, Animal secondAnimal) -> secondAnimal.getName()
-                                                                                      .compareTo(firstAnimal.getName()));
+        animalArrayList.sort((firstAnimal, secondAnimal) -> secondAnimal.getName()
+                                                                        .compareTo(firstAnimal.getName()));
         // display
         animalArrayList.forEach(animal -> System.out.printf("Id: %d, Name: %s\n", animal.getId(), animal.getName()));
     }

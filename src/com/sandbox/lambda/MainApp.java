@@ -26,23 +26,19 @@ public class MainApp {
         animalArrayList.sort(new Comparator<Animal>() {
             @Override
             public int compare(Animal firstAnimal, Animal secondAnimal) {
-                if (firstAnimal.getName()
-                               .toLowerCase()
-                               .charAt(0) > secondAnimal.getName()
-                                                        .toLowerCase()
-                                                        .charAt(0))
-                    return 1;
-                else if (firstAnimal.getName()
-                                    .toLowerCase()
-                                    .charAt(0) < secondAnimal.getName()
-                                                             .toLowerCase()
-                                                             .charAt(0))
-                    return -1;
-
-                return 0;
+                return firstAnimal.getName()
+                                  .compareTo(secondAnimal.getName());
             }
         });
 
+        // display
+        animalArrayList.forEach(animal -> System.out.printf("Id: %d, Name: %s\n", animal.getId(), animal.getName()));
+
+        // ______________________________
+
+        // using lambda expression as parameter
+        animalArrayList.sort((Animal firstAnimal, Animal secondAnimal) -> firstAnimal.getName()
+                                                                                     .compareTo(secondAnimal.getName()));
         // display
         animalArrayList.forEach(animal -> System.out.printf("Id: %d, Name: %s\n", animal.getId(), animal.getName()));
     }

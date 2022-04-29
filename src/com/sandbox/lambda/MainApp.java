@@ -16,31 +16,41 @@ public class MainApp {
         }).start();
 
         // collections taking an anonymous comparator
-        ArrayList<Animal> animalArrayList = new ArrayList<>();
-        animalArrayList.add(new Animal(10, "Monkey"));
-        animalArrayList.add(new Animal(11, "Cat"));
-        animalArrayList.add(new Animal(9, "Rat"));
-        animalArrayList.add(new Animal(2, "Mole"));
+        ArrayList<Vehicle> motorcycles = new ArrayList<>();
+        motorcycles.add(new Motorcycle(2, 15, "Toyota", "Navi", 2018, 2, "Metal"));
+        motorcycles.add(new Motorcycle(2, 15, "Ducati", "Panigale", 2022, 2, "Metal"));
+        motorcycles.add(new Motorcycle(2, 15, "Honda", "Monkey", 2019, 2, "Metal"));
 
-        // sort by name
-        animalArrayList.sort(new Comparator<Animal>() {
+        // sort by release year
+        motorcycles.sort(new Comparator<>() {
             @Override
-            public int compare(Animal firstAnimal, Animal secondAnimal) {
-                return firstAnimal.getName()
-                                  .compareTo(secondAnimal.getName());
+            public int compare(Vehicle firstVehicle, Vehicle secondVehicle) {
+                if (firstVehicle.getReleaseYear() > secondVehicle.getReleaseYear())
+                    return 1;
+                else if (firstVehicle.getReleaseYear() < secondVehicle.getReleaseYear())
+                    return -1;
+                return 0;
             }
         });
 
         // display
-        animalArrayList.forEach(animal -> System.out.printf("Id: %d, Name: %s\n", animal.getId(), animal.getName()));
+        motorcycles.forEach(motorcycle -> System.out.printf("Make: %s, Model: %s Year: %d\n", motorcycle.getMake(), motorcycle.getModel(), motorcycle.getReleaseYear()));
 
         // ______________________________
 
         // using lambda expression as parameter
-        animalArrayList.sort((firstAnimal, secondAnimal) -> secondAnimal.getName()
-                                                                        .compareTo(firstAnimal.getName()));
+        motorcycles.sort((firstVehicle, secondVehicle) -> firstVehicle.getMake()
+                                                                      .compareTo(secondVehicle.getMake()));
         // display
-        animalArrayList.forEach(animal -> System.out.printf("Id: %d, Name: %s\n", animal.getId(), animal.getName()));
+        printVehicle(motorcycles);
+        
+        // ______________________________
+
+    }
+
+    public static void printVehicle(ArrayList<Vehicle> vehicles) {
+        vehicles.forEach(vehicle -> System.out.printf("Make: %s, Model: %s Year: %d\n", vehicle.getMake(), vehicle.getModel(), vehicle.getReleaseYear()));
+
     }
 
 }

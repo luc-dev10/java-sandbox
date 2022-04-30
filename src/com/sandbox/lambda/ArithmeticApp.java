@@ -14,7 +14,7 @@ public class ArithmeticApp {
         calculateAndDisplay(subtraction, 1, 2);
         calculateAndDisplay(multiplication, 1, 2);
         calculateAndDisplay(division, 1, 2);
-
+        
     }
 
     public static void calculateAndDisplay(IMath math, int x, int y) {

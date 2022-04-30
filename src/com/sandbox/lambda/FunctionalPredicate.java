@@ -16,5 +16,13 @@ public class FunctionalPredicate {
             if (chairOver10Legs.test(chair))
                 System.out.println(chair.getLeg());
 
+        // chaining predicates
+        Predicate<Chair> chairOver4Legs = chair -> chair.getLeg() % 4 == 0;
+        Predicate<Chair> chairOver2Legs = chair -> chair.getLeg() % 2 == 0;
+        for (Chair chair : chairs)
+            if (chairOver4Legs.and(chairOver2Legs)
+                              .test(chair))
+                System.out.println(chair.getLeg());
+
     }
 }

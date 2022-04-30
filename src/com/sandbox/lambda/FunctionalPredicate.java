@@ -1,6 +1,7 @@
 package com.sandbox.lambda;
 
 import java.util.ArrayList;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
@@ -35,5 +36,24 @@ public class FunctionalPredicate {
         for (Chair chair : chairs)
             System.out.println(getDescription.apply(chair));
 
+        // chain functions
+        Function<Chair, String> getId = (Chair chair) -> {
+            return String.format("ID: %d", chair.getId());
+        };
+        Function<String, String> addStars = (String value) -> {
+            return value.concat(" *******");
+        };
+
+        Function<Chair, String> chainedFunction = getId.andThen(addStars);
+        System.out.println(chainedFunction.apply(chairs.get(0)));
+
+        // bi function
+        BiFunction<String, Chair, String> concatName = (String id, Chair chair) -> {
+            return id.concat(String.format(" - %c", chair.getName()));
+        };
+
+        System.out.println(concatName.apply(getId.apply(chairs.get(0)), chairs.get(0)));
+
     }
+
 }

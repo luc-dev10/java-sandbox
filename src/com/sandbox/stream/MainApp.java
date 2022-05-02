@@ -2,6 +2,7 @@ package com.sandbox.stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class MainApp {
     public static void main(String[] args) {
@@ -28,6 +29,13 @@ public class MainApp {
                   .filter(name -> name.startsWith("J"))
                   .sorted()
                   .forEach(System.out::println);
+
+        // creating streams
+        Stream<String> firstStream = Stream.of("Hello", "World");
+        Stream<String> secondStream = Stream.of("Hello", "There");
+        System.out.println(Stream.concat(firstStream, secondStream)
+                                 .distinct()
+                                 .count());
 
     }
 }

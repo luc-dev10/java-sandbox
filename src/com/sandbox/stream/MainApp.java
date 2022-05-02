@@ -21,5 +21,13 @@ public class MainApp {
         personList.forEach(person -> System.out.println(person.getName()));
 
         // ____________________________________
+
+        // using stream
+        personList.stream()
+                  .map(Person::getName)
+                  .filter(name -> name.startsWith("J"))
+                  .sorted()
+                  .forEach(System.out::println);
+
     }
 }

@@ -1,4 +1,4 @@
-package com.sandbox.stream;
+package com.sandbox.model;
 
 public class Person {
     private String name;

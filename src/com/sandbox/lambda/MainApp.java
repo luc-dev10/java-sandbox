@@ -1,5 +1,8 @@
 package com.sandbox.lambda;
 
+import com.sandbox.model.Motorcycle;
+import com.sandbox.model.Vehicle;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 

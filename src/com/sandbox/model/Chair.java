@@ -1,4 +1,4 @@
-package com.sandbox.lambda;
+package com.sandbox.model;
 
 public class Chair {
 

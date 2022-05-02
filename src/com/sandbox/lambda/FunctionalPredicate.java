@@ -1,5 +1,7 @@
 package com.sandbox.lambda;
 
+import com.sandbox.model.Chair;
+
 import java.util.ArrayList;
 import java.util.function.BiFunction;
 import java.util.function.Function;
